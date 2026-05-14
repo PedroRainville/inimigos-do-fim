@@ -1,23 +1,20 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from '@tanstack/react-router';
 import { getRouter } from './router';
-import { hydrate } from '@tanstack/router-core/ssr/client';
 
-async function boot() {
+function boot() {
   try {
     const router = getRouter();
-
-    // Minimal options object expected by hydration code
-    window.__TSS_START_OPTIONS__ = window.__TSS_START_OPTIONS__ ?? { serializationAdapters: [] };
-
-    router.update({ basepath: process.env.TSS_ROUTER_BASEPATH, serializationAdapters: [] });
-
-    if (!router.stores.matchesId.get().length) {
-      await hydrate(router);
+    const el = document.getElementById('root');
+    if (!el) {
+      console.error('Root element not found');
+      return;
     }
-
-    // signal any listeners that hydration completed
-    window.$_TSR?.h();
+    const root = createRoot(el);
+    root.render(<RouterProvider router={router} />);
   } catch (err) {
-    console.error('Error hydrating start client', err);
+    console.error('Error starting SPA', err);
   }
 }
 
