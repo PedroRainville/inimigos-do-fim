@@ -80,6 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Racha FC — Sorteador de Times" },
+      { name: "twitter:description", content: "Cadastre jogadores e sorteie times equilibrados por posição e overall." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8939cca3-20df-4c64-a8d7-5c930d9ec7e9/id-preview-d238f477--e1ed3f27-c02a-478d-bcc7-d3b8f07874a6.lovable.app-1778726458943.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8939cca3-20df-4c64-a8d7-5c930d9ec7e9/id-preview-d238f477--e1ed3f27-c02a-478d-bcc7-d3b8f07874a6.lovable.app-1778726458943.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
