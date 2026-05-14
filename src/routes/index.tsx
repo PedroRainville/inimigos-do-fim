@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Racha FC — Sorteador de Times de Futebol" },
+      { title: "Pelotas FC — Sorteador de Times de Futebol" },
       {
         name: "description",
         content: "Cadastre jogadores, sorteie times equilibrados por posição e overall, com histórico para variar as equipes.",
@@ -79,7 +79,7 @@ function Index() {
           <div>
             <div className="flex items-center gap-2">
               <Trophy className="size-6 text-accent" />
-              <span className="text-xs uppercase tracking-[0.3em] text-foreground/80">Racha FC</span>
+              <span className="text-xs uppercase tracking-[0.3em] text-foreground/80">Pelotas FC</span>
             </div>
             <h1 className="font-display text-5xl leading-none mt-1 text-foreground">
               SORTEADOR
