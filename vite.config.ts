@@ -1,3 +1,13 @@
 import { defineConfig } from "vite";
+import path from "path";
+import { fileURLToPath } from "url";
 
-export default defineConfig({});
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig({
+	resolve: {
+		alias: {
+			"node:async_hooks": path.resolve(__dirname, "src/shims/node-async-hooks.js"),
+		},
+	},
+});
